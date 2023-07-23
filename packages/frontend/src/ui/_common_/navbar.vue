@@ -2,10 +2,10 @@
 <div :class="[$style.root, { [$style.iconOnly]: iconOnly }]">
 	<div :class="$style.body">
 		<div :class="$style.top">
-			<div :class="$style.banner" :style="{ backgroundImage: `url(${ instance.bannerUrl })` }"></div>
-			<button v-tooltip.noDelay.right="instance.name ?? i18n.ts.instance" class="_button" :class="$style.instance" @click="openInstanceMenu">
-				<img :src="instance.iconUrl || instance.faviconUrl || '/favicon.ico'" alt="" :class="$style.instanceIcon"/>
-			</button>
+			<div :class="$style.banner" :style="{ backgroundImage: `url(${ $i.bannerUrl })` }"></div>
+				<button v-tooltip.noDelay.right="`${i18n.ts.account}: @${$i.username}`" class="_button" :class="[$style.account]" @click="openAccountMenu">
+					<MkAvatar :user="$i" :class="$style.instanceIcon"/>
+				</button>
 		</div>
 		<div :class="$style.middle">
 			<MkA v-tooltip.noDelay.right="i18n.ts.timeline" :class="$style.item" :activeClass="$style.active" to="/" exact>
@@ -40,11 +40,11 @@
 			</MkA>
 		</div>
 		<div :class="$style.bottom">
-			<button v-tooltip.noDelay.right="i18n.ts.note" class="_button" :class="[$style.post]" data-cy-open-post-form @click="os.post">
-				<i class="ti ti-pencil ti-fw" :class="$style.postIcon"></i><span :class="$style.postText">{{ i18n.ts.note }}</span>
+			<button class="_button" :class="$style.post" data-cy-open-post-form @click="os.post">
+				<i :class="$style.postIcon" class="ti ti-pencil ti-fw"></i><span style="position: relative;">{{ i18n.ts.note }}</span>
 			</button>
-			<button v-tooltip.noDelay.right="`${i18n.ts.account}: @${$i.username}`" class="_button" :class="[$style.account]" @click="openAccountMenu">
-				<MkAvatar :user="$i" :class="$style.avatar"/><MkAcct class="_nowrap" :class="$style.acct" :user="$i"/>
+			<button v-tooltip.noDelay.right="instance.name ?? i18n.ts.instance" class="_button" :class="$style.instance" @click="openInstanceMenu">
+					<img :src="instance.iconUrl || instance.faviconUrl || '/favicon.ico'" alt="" :class="$style.instanceIcon"/>
 			</button>
 		</div>
 	</div>
@@ -152,7 +152,7 @@ function more(ev: MouseEvent) {
 		mask-image: linear-gradient(0deg, rgba(0,0,0,0) 15%, rgba(0,0,0,0.75) 100%);
 	}
 
-	.instance {
+	.account {
 		position: relative;
 		display: block;
 		text-align: center;
@@ -216,14 +216,11 @@ function more(ev: MouseEvent) {
 		position: relative;
 	}
 
-	.account {
+	.instance {
 		position: relative;
-		display: flex;
-		align-items: center;
-		padding-left: 30px;
+		display: block;
+		text-align: center;
 		width: 100%;
-		text-align: left;
-		box-sizing: border-box;
 		margin-top: 16px;
 	}
 

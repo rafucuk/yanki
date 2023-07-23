@@ -5,13 +5,13 @@
 		<div v-if="user">
 			<XHome v-if="tab === 'home'" :user="user"/>
 			<XTimeline v-else-if="tab === 'notes'" :user="user"/>
+			<XPages v-else-if="tab === 'pages'" :user="user"/>
+			<XGallery v-else-if="tab === 'gallery'" :user="user"/>
 			<XActivity v-else-if="tab === 'activity'" :user="user"/>
 			<XAchievements v-else-if="tab === 'achievements'" :user="user"/>
 			<XReactions v-else-if="tab === 'reactions'" :user="user"/>
 			<XClips v-else-if="tab === 'clips'" :user="user"/>
 			<XLists v-else-if="tab === 'lists'" :user="user"/>
-			<XPages v-else-if="tab === 'pages'" :user="user"/>
-			<XGallery v-else-if="tab === 'gallery'" :user="user"/>
 		</div>
 		<MkError v-else-if="error" @retry="fetchUser()"/>
 		<MkLoading v-else/>
@@ -75,6 +75,14 @@ const headerTabs = $computed(() => user ? [{
 	title: i18n.ts.notes,
 	icon: 'ti ti-pencil',
 }, {
+	key: 'pages',
+	title: i18n.ts.pages,
+	icon: 'ti ti-news',
+}, {
+	key: 'gallery',
+	title: i18n.ts.gallery,
+	icon: 'ti ti-icons',
+}, {
 	key: 'activity',
 	title: i18n.ts.activity,
 	icon: 'ti ti-chart-line',
@@ -94,15 +102,8 @@ const headerTabs = $computed(() => user ? [{
 	key: 'lists',
 	title: i18n.ts.lists,
 	icon: 'ti ti-list',
-}, {
-	key: 'pages',
-	title: i18n.ts.pages,
-	icon: 'ti ti-news',
-}, {
-	key: 'gallery',
-	title: i18n.ts.gallery,
-	icon: 'ti ti-icons',
-}] : []);
+},
+] : []);
 
 definePageMetadata(computed(() => user ? {
 	icon: 'ti ti-user',

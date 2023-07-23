@@ -349,7 +349,7 @@ importers:
         version: 2.1.0
       summaly:
         specifier: github:misskey-dev/summaly
-        version: github.com/misskey-dev/summaly/77dd5654bb82280b38c1f50e51a771c33f3df503
+        version: github.com/misskey-dev/summaly/089a0ad8e8c780e5c088b1c528aa95c5827cbdcc
       systeminformation:
         specifier: 5.18.7
         version: 5.18.7
@@ -709,6 +709,9 @@ importers:
       eventemitter3:
         specifier: 5.0.1
         version: 5.0.1
+      focus-trap:
+        specifier: ^7.5.2
+        version: 7.5.2
       gsap:
         specifier: 3.12.2
         version: 3.12.2
@@ -979,7 +982,7 @@ importers:
         version: github.com/misskey-dev/storybook-addon-misskey-theme/cf583db098365b2ccc81a82f63ca9c93bc32b640(@storybook/blocks@7.0.27)(@storybook/components@7.0.27)(@storybook/core-events@7.0.27)(@storybook/manager-api@7.0.27)(@storybook/preview-api@7.0.27)(@storybook/theming@7.0.27)(@storybook/types@7.0.27)(react-dom@18.2.0)(react@18.2.0)
       summaly:
         specifier: github:misskey-dev/summaly
-        version: github.com/misskey-dev/summaly/77dd5654bb82280b38c1f50e51a771c33f3df503
+        version: github.com/misskey-dev/summaly/089a0ad8e8c780e5c088b1c528aa95c5827cbdcc
       vite-plugin-turbosnap:
         specifier: 1.0.2
         version: 1.0.2
@@ -7179,7 +7182,7 @@ packages:
       ts-dedent: 2.2.0
       type-fest: 2.19.0
       vue: 3.3.4
-      vue-component-type-helpers: 1.8.5
+      vue-component-type-helpers: 1.8.6
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -12598,6 +12601,12 @@ packages:
     dependencies:
       inherits: 2.0.4
       readable-stream: 2.3.7
+    dev: false
+
+  /focus-trap@7.5.2:
+    resolution: {integrity: sha512-p6vGNNWLDGwJCiEjkSK6oERj/hEyI9ITsSwIUICBoKLlWiTWXJRfQibCwcoi50rTZdbi87qDtUlMCmQwsGSgPw==}
+    dependencies:
+      tabbable: 6.2.0
     dev: false
 
   /follow-redirects@1.15.2(debug@4.3.4):
@@ -19740,6 +19749,10 @@ packages:
     resolution: {integrity: sha512-g9rPT3V1Q4WjWFZ/t5BdGC1mT/FpYnsLdBl+M5e6MlRkuE1RSR+R43wcY/3mKI59B9KEr+vxdWCuWNMD3oNHKA==}
     dev: false
 
+  /tabbable@6.2.0:
+    resolution: {integrity: sha512-Cat63mxsVJlzYvN51JmVXIgNoUokrIaT2zLclCXjRd8boZ0004U4KCs/sToJ75C6sdlByWxpYnb5Boif1VSFew==}
+    dev: false
+
   /tar-fs@2.1.1:
     resolution: {integrity: sha512-V0r2Y9scmbDRLCNex/+hYzvp/zyYjvFbHPNgVTKfQvVrb6guiE/fxP+XblDNR011utopbkex2nM4dHNV6GDsng==}
     dependencies:
@@ -20896,8 +20909,8 @@ packages:
     resolution: {integrity: sha512-Dhxzh5HZuiHQhbvTW9AMetFfBHDMYpo23Uo9btPXgdYP+3T5S+p+jgNy7spra+veYhBP2dCSgxR/i2Y02h5/6w==}
     engines: {node: '>=0.10.0'}
 
-  /vue-component-type-helpers@1.8.5:
-    resolution: {integrity: sha512-SBNsskF7L5x604V1BN4ZzdTtWgCqo5cfl//YuBXtc3LLyPdFRqUeJn2Q+FPNmCtl23LBT2tH79M/uv13fL0MgQ==}
+  /vue-component-type-helpers@1.8.6:
+    resolution: {integrity: sha512-vKWeoKVEV51ZzoB8+UY0apMXiifbPQxWlcZlvQRDVdiOHmEkCBClWeIGbqQ8cCR9P4j+oCyLW87sraZFMz/qnA==}
     dev: true
 
   /vue-docgen-api@4.64.1(vue@3.3.4):
@@ -21528,8 +21541,8 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: true
 
-  github.com/misskey-dev/summaly/77dd5654bb82280b38c1f50e51a771c33f3df503:
-    resolution: {tarball: https://codeload.github.com/misskey-dev/summaly/tar.gz/77dd5654bb82280b38c1f50e51a771c33f3df503}
+  github.com/misskey-dev/summaly/089a0ad8e8c780e5c088b1c528aa95c5827cbdcc:
+    resolution: {tarball: https://codeload.github.com/misskey-dev/summaly/tar.gz/089a0ad8e8c780e5c088b1c528aa95c5827cbdcc}
     name: summaly
     version: 4.0.2
     dependencies:

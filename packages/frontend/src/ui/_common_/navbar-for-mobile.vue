@@ -1,10 +1,10 @@
 <template>
 <div :class="$style.root">
 	<div :class="$style.top">
-		<div :class="$style.banner" :style="{ backgroundImage: `url(${ instance.bannerUrl })` }"></div>
-		<button class="_button" :class="$style.instance" @click="openInstanceMenu">
-			<img :src="instance.iconUrl || instance.faviconUrl || '/favicon.ico'" alt="" :class="$style.instanceIcon"/>
-		</button>
+		<div :class="$style.banner" :style="{ backgroundImage: `url(${ $i.bannerUrl })` }"></div>
+			<button v-tooltip.noDelay.right="`${i18n.ts.account}: @${$i.username}`" class="_button" :class="[$style.account]" @click="openAccountMenu">
+				<MkAvatar :user="$i" :class="$style.instanceIcon"/>
+			</button>
 	</div>
 	<div :class="$style.middle">
 		<MkA :class="$style.item" :activeClass="$style.active" to="/" exact>
@@ -33,8 +33,8 @@
 		<button class="_button" :class="$style.post" data-cy-open-post-form @click="os.post">
 			<i :class="$style.postIcon" class="ti ti-pencil ti-fw"></i><span style="position: relative;">{{ i18n.ts.note }}</span>
 		</button>
-		<button class="_button" :class="$style.account" @click="openAccountMenu">
-			<MkAvatar :user="$i" :class="$style.avatar"/><MkAcct :class="$style.acct" class="_nowrap" :user="$i"/>
+		<button v-tooltip.noDelay.right="instance.name ?? i18n.ts.instance" class="_button" :class="$style.instance" @click="openInstanceMenu">
+				<img :src="instance.iconUrl || instance.faviconUrl || '/favicon.ico'" alt="" :class="$style.instanceIcon"/>
 		</button>
 	</div>
 </div>
@@ -99,7 +99,7 @@ function more() {
 	mask-image: linear-gradient(0deg, rgba(0,0,0,0) 15%, rgba(0,0,0,0.75) 100%);
 }
 
-.instance {
+.account {
 	position: relative;
 	display: block;
 	text-align: center;
@@ -159,14 +159,11 @@ function more() {
 	width: 32px;
 }
 
-.account {
+.instance {
 	position: relative;
-	display: flex;
-	align-items: center;
-	padding-left: 30px;
+	display: block;
+	text-align: center;
 	width: 100%;
-	text-align: left;
-	box-sizing: border-box;
 	margin-top: 16px;
 }
 
