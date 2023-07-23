@@ -18,6 +18,7 @@
 		</template>
 	</div>
 	<div :class="$style.description">{{ role.description }}</div>
+	<div :class="$style.description">{{ "Location: " + role.displayOrder }}</div>
 </MkA>
 </template>
 

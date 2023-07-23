@@ -177,15 +177,9 @@
 				<MkButton primary rounded @click="create"><i class="ti ti-plus"></i> {{ i18n.ts._role.new }}</MkButton>
 				<div class="_gaps_s">
 					<MkFoldableSection>
-						<template #header>Manual roles</template>
+						<template #header>Roles</template>
 						<div class="_gaps_s">
-							<MkRolePreview v-for="role in roles.filter(x => x.target === 'manual')" :key="role.id" :role="role" :forModeration="true"/>
-						</div>
-					</MkFoldableSection>
-					<MkFoldableSection>
-						<template #header>Conditional roles</template>
-						<div class="_gaps_s">
-							<MkRolePreview v-for="role in roles.filter(x => x.target === 'conditional')" :key="role.id" :role="role" :forModeration="true"/>
+							<MkRolePreview v-for="role in sortedroles" :key="role.id" :role="role" :forModeration="true"/>
 						</div>
 					</MkFoldableSection>
 				</div>
@@ -216,6 +210,9 @@ const router = useRouter();
 const baseRoleQ = ref('');
 
 const roles = await os.api('admin/roles/list');
+const sortedroles = roles.sort(function(a,b){
+    return b.displayOrder - a.displayOrder;
+})
 
 const policies = reactive<Record<typeof ROLE_POLICIES[number], any>>({});
 for (const ROLE_POLICY of ROLE_POLICIES) {

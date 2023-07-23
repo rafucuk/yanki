@@ -1,7 +1,9 @@
 <template>
 <MkSpacer :contentMax="700">
-	<MkPagination v-slot="{items}" ref="list" :pagination="pagination">
-		<MkPagePreview v-for="page in items" :key="page.id" :page="page" class="_margin"/>
+	<MkPagination v-slot="{items}" :pagination="pagination">
+		<div :class="$style.root">
+			<MkPagePreview v-for="page in items" :key="page.id" :page="page" class="post"/>
+		</div>
 	</MkPagination>
 </MkSpacer>
 </template>
@@ -24,3 +26,11 @@ const pagination = {
 	})),
 };
 </script>
+<style lang="scss" module>
+.root {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+	grid-gap: 12px;
+	margin: var(--margin);
+}
+</style>

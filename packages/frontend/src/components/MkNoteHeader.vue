@@ -6,7 +6,7 @@
 	<div v-if="note.user.isBot" :class="$style.isBot">bot</div>
 	<div :class="$style.username"><MkAcct :user="note.user"/></div>
 	<div v-if="note.user.badgeRoles" :class="$style.badgeRoles">
-		<img v-for="role in note.user.badgeRoles" :key="role.id" v-tooltip="role.name" :class="$style.badgeRole" :src="role.iconUrl"/>
+		<img :key="note.user.badgeRoles[0].id" v-tooltip="note.user.badgeRoles[0].name" :class="$style.badgeRole" :src="note.user.badgeRoles[0].iconUrl"/>
 	</div>
 	<div :class="$style.info">
 		<MkA :to="notePage(note)">
@@ -29,6 +29,7 @@ import * as misskey from 'misskey-js';
 import { i18n } from '@/i18n';
 import { notePage } from '@/filters/note';
 import { userPage } from '@/filters/user';
+import { navbarItemDef } from '@/navbar';
 
 defineProps<{
 	note: misskey.entities.Note;
