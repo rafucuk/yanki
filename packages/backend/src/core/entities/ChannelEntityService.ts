@@ -85,6 +85,7 @@ export class ChannelEntityService {
 			pinnedNoteIds: channel.pinnedNoteIds,
 			color: channel.color,
 			isArchived: channel.isArchived,
+			isPrivate: channel.isPrivate,
 			usersCount: channel.usersCount,
 			notesCount: channel.notesCount,
 

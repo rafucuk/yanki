@@ -34,6 +34,10 @@ export const packedChannelSchema = {
 			type: 'boolean',
 			optional: false, nullable: false,
 		},
+		isPrivate: {
+			type: 'boolean',
+			optional: false, nullable: false,
+		},
 		notesCount: {
 			type: 'number',
 			nullable: false, optional: false,

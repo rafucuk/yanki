@@ -23,6 +23,11 @@
 				</div>
 			</div>
 
+			<MkSwitch v-model="isPrivate">
+				{{ i18n.ts.makeReactionsPublic }}
+				<template #caption>{{ i18n.ts.makeReactionsPublicDescription }}</template>
+			</MkSwitch>
+
 			<MkFolder :defaultOpen="true">
 				<template #label>{{ i18n.ts.pinnedNotes }}</template>
 
@@ -81,6 +86,7 @@ let name = $ref(null);
 let description = $ref(null);
 let bannerUrl = $ref<string | null>(null);
 let bannerId = $ref<string | null>(null);
+let isPrivate = $ref<boolean | null>(null);
 let color = $ref('#000');
 const pinnedNotes = ref([]);
 
@@ -105,6 +111,7 @@ async function fetchChannel() {
 	description = channel.description;
 	bannerId = channel.bannerId;
 	bannerUrl = channel.bannerUrl;
+	isPrivate = channel.isPrivate;
 	pinnedNotes.value = channel.pinnedNoteIds.map(id => ({
 		id,
 	}));
@@ -135,6 +142,7 @@ function save() {
 		name: name,
 		description: description,
 		bannerId: bannerId,
+		isPrivate: isPrivate,
 		pinnedNoteIds: pinnedNotes.value.map(x => x.id),
 		color: color,
 	};
