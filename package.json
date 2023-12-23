@@ -1,10 +1,10 @@
 {
-	"name": "misskey",
-	"version": "13.14.0-beta.4",
-	"codename": "nasubi",
+	"name": "yanki",
+	"version": "0.0.1 beta",
+	"codename": "rafucuk",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/misskey-dev/misskey.git"
+		"url": "https://github.com/rafucuk/yanki"
 	},
 	"packageManager": "pnpm@8.6.0",
 	"workspaces": [
