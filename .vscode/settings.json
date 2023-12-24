@@ -18,6 +18,16 @@
             "database": "miss",
             "username": "miss",
             "password": "miss"
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "yanki",
+            "database": "yanki",
+            "username": "yanki",
+            "password": "raufsen33"
         }
     ]
 }
