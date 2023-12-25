@@ -465,10 +465,6 @@ export const routes = [{
 	component: page(() => import('./pages/drive.vue')),
 	loginRequired: true,
 }, {
-	path: '/chat',
-	component: page(() => import('./pages/chat.vue')),
-	loginRequired: true,
-}, {
 	path: '/my/follow-requests',
 	component: page(() => import('./pages/follow-requests.vue')),
 	loginRequired: true,
