@@ -33,5 +33,13 @@ export default Object.entries(locales)
 		const [lang] = k.split('-');
 		switch (k) {
 			case 'tr-TR': return v;
+			case 'tr-TR':
+			case 'tr-TR': return merge(locales['tr-TR'], v);
+			default: return merge(
+				locales['tr-TR'],
+				locales['tr-TR'],
+				locales[`${lang}-${primaries[lang]}`] || {},
+				v
+			);
 		}
 	})(), a), {});

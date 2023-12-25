@@ -689,8 +689,8 @@ importers:
         specifier: 2.0.1
         version: 2.0.1(chart.js@4.3.0)
       chromatic:
-        specifier: 6.19.9
-        version: 6.19.9
+        specifier: 10.2.0
+        version: 10.2.0
       compare-versions:
         specifier: 5.0.3
         version: 5.0.3
@@ -10261,8 +10261,8 @@ packages:
     resolution: {integrity: sha512-bIomtDF5KGpdogkLd9VspvFzk9KfpyyGlS8YFVZl7TGPBHL5snIOnxeshwVgPteQ9b4Eydl+pVbIyE1DcvCWgQ==}
     engines: {node: '>=10'}
 
-  /chromatic@6.19.9:
-    resolution: {integrity: sha512-UHrPbPoLnJwd063cRSO0U865VhcATykpMiHsAnNFz5EFRsBvM9wefqyS2Z6W8Ti9J7Fjrf4MV4PA+Q5k2lhFfQ==}
+  /chromatic@10.2.0:
+    resolution: {integrity: sha512-UDVGWa2Fx9CLCpwnyfvFHGr0vGF0ooB1TugUdgOcjC9pJXiFa67i7oaXMyTfVRIFxlt/QkqOJwdqDqqlLFffCw==}
     hasBin: true
     dev: false
 
