@@ -65,6 +65,7 @@ import { computed, ref, watch, defineAsyncComponent } from 'vue';
 import MkTextarea from '@/components/MkTextarea.vue';
 import MkButton from '@/components/MkButton.vue';
 import MkInput from '@/components/MkInput.vue';
+import MkSwitch from '@/components/MkSwitch.vue';
 import MkColorInput from '@/components/MkColorInput.vue';
 import { selectFile } from '@/scripts/select-file';
 import * as os from '@/os';

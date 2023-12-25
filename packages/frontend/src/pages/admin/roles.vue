@@ -1,7 +1,9 @@
 <template>
-<div>
-	<MkStickyContainer>
-		<template #header><XHeader :actions="headerActions" :tabs="headerTabs"/></template>
+	<div>
+	  <MkStickyContainer>
+		<template #header>
+		  <XHeader :actions="headerActions" :tabs="headerTabs" />
+		</template>
 		<MkSpacer :contentMax="700">
 			<div class="_gaps">
 				<MkFolder>
@@ -234,9 +236,8 @@ function create() {
 	router.push('/admin/roles/new');
 }
 
-const headerActions = $computed(() => []);
-
-const headerTabs = $computed(() => []);
+const headerActions = computed(() => []);
+const headerTabs = computed(() => []);
 
 definePageMetadata(computed(() => ({
 	title: i18n.ts.roles,

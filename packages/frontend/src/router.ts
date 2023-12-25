@@ -31,6 +31,10 @@ export const routes = [{
 	path: '/notes/:noteId',
 	component: page(() => import('./pages/note.vue')),
 }, {
+	name: 'chatroom',
+	path: '/chatroom/:noteId',
+	component: page(() => import('./pages/note.vue')),
+}, {
 	name: 'list',
 	path: '/list/:listId',
 	component: page(() => import('./pages/list.vue')),
@@ -459,6 +463,10 @@ export const routes = [{
 }, {
 	path: '/my/drive',
 	component: page(() => import('./pages/drive.vue')),
+	loginRequired: true,
+}, {
+	path: '/chat',
+	component: page(() => import('./pages/chat.vue')),
 	loginRequired: true,
 }, {
 	path: '/my/follow-requests',

@@ -5,7 +5,7 @@
 	</MkA>
 	<div v-if="note.user.isBot" :class="$style.isBot">bot</div>
 	<div :class="$style.username"><MkAcct :user="note.user"/></div>
-	<div v-if="note.user.badgeRoles" :class="$style.badgeRoles">
+	<div v-if="note.user.badgeRoles[0].id" :class="$style.badgeRoles">
 		<img :key="note.user.badgeRoles[0].id" v-tooltip="note.user.badgeRoles[0].name" :class="$style.badgeRole" :src="note.user.badgeRoles[0].iconUrl"/>
 	</div>
 	<div :class="$style.info">
