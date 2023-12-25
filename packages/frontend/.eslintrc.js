@@ -15,6 +15,13 @@ module.exports = {
 		'plugin:vue/vue3-recommended',
 	],
 	rules: {
+		'eol-last': 'off',
+        'no-mixed-spaces-and-tabs': 'off',
+        'prefer-arrow-callback': 'off',
+        'comma-spacing': 'off',
+        'space-before-blocks': 'off',
+        'semi': 'off',
+		'no-multiple-empty-lines': 'off',
 		'@typescript-eslint/no-empty-interface': [
 			'error',
 			{

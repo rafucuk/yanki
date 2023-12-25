@@ -143,4 +143,3 @@
         background: var(--panel);
     }
     </style>
-    
