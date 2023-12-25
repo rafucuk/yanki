@@ -33,7 +33,7 @@ export const routes = [{
 }, {
 	name: 'chatroom',
 	path: '/chatroom/:noteId',
-	component: page(() => import('./pages/note.vue')),
+	component: page(() => import('./pages/chatroom.vue')),
 }, {
 	name: 'list',
 	path: '/list/:listId',

@@ -1,5 +1,5 @@
 <template>
-<div :class="[$style.root, { [$style.children]: depth > 1 }]">
+  <div :class="[$style.root, { [$style.children]: depth > 1 }]">
 	<div :class="$style.main">
 		<div v-if="note.channel" :class="$style.colorBar" :style="{ background: note.channel.color }"></div>
 		<MkAvatar :class="$style.avatar" :user="note.user" link preview/>
@@ -16,7 +16,7 @@
 			</div>
 		</div>
 	</div>
-	<template v-if="depth < 5">
+	<template v-if="depth < 10">
 		<MkNoteSub v-for="reply in replies" :key="reply.id" :note="reply" :class="$style.reply" :detail="true" :depth="depth + 1"/>
 	</template>
 	<div v-else :class="$style.more">
@@ -28,6 +28,7 @@
 <script lang="ts" setup>
 import { } from 'vue';
 import * as misskey from 'misskey-js';
+import MkButton from '@/components/MkButton.vue';
 import MkNoteHeader from '@/components/MkNoteHeader.vue';
 import MkSubNoteContent from '@/components/MkSubNoteContent.vue';
 import MkCwButton from '@/components/MkCwButton.vue';

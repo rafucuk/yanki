@@ -4,17 +4,12 @@
         <MkSpacer :contentMax="800">
             <div>
                 <Transition :name="defaultStore.state.animation ? 'fade' : ''" mode="out-in">
-                    <div v-if="note">
-                        <div v-if="showNext" class="_margin">
-                            <MkNotes class="" :pagination="nextPagination" :noGap="true"/>
-                        </div>
-    
+                    <div v-if="note">    
                         <div class="_margin">
-                            <MkButton v-if="!showNext && hasNext" :class="$style.loadNext" @click="showNext = true"><i class="ti ti-chevron-up"></i></MkButton>
                             <div class="_margin _gaps_s">
                                 <MkRemoteCaution v-if="note.user.host != null" :href="note.url ?? note.uri"/>
                                 <MkNoteDetailed :key="note.id" v-model:note="note" :class="$style.note"/>
-                            </div>+
+                            </div>
                             <div v-if="clips && clips.length > 0" class="_margin">
                                 <div style="font-weight: bold; padding: 12px;">{{ i18n.ts.clip }}</div>
                                 <div class="_gaps">
@@ -36,8 +31,7 @@
     <script lang="ts" setup>
     import { computed, watch } from 'vue';
     import * as misskey from 'misskey-js';
-    import MkNoteDetailed from '@/components/MkNoteDetailed.vue';
-    import MkNotes from '@/components/MkMessage.vue';
+    import MkNoteDetailed from '@/components/MkMessage.vue';
     import MkRemoteCaution from '@/components/MkRemoteCaution.vue';
     import MkButton from '@/components/MkButton.vue';
     import * as os from '@/os';
@@ -53,20 +47,10 @@
     
     let note = $ref<null | misskey.entities.Note>();
     let clips = $ref();
-    let hasPrev = $ref(false);
     let hasNext = $ref(false);
-    let showPrev = $ref(false);
     let showNext = $ref(false);
     let error = $ref();
-    
-    const prevPagination = {
-        endpoint: 'users/notes' as const,
-        limit: 10,
-        params: computed(() => note ? ({
-            userId: note.userId,
-            untilId: note.id,
-        }) : null),
-    };
+
     
     const nextPagination = {
         reversed: true,
@@ -79,9 +63,7 @@
     };
     
     function fetchNote() {
-        hasPrev = false;
         hasNext = false;
-        showPrev = false;
         showNext = false;
         note = null;
         os.api('notes/show', {
@@ -104,7 +86,6 @@
                 }),
             ]).then(([_clips, prev, next]) => {
                 clips = _clips;
-                hasPrev = prev.length !== 0;
                 hasNext = next.length !== 0;
             });
         }).catch(err => {
