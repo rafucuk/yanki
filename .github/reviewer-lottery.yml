@@ -1,9 +1,6 @@
 groups:
   - name: devs
-    reviewers: 2
+    reviewers: 1
     internal_reviewers: 1
     usernames:
-      - syuilo
-      - acid-chicken
-      - EbiseLutica
-      - tamaina
+      - rafucuk
