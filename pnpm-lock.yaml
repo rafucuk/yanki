@@ -110,6 +110,12 @@ importers:
       '@fastify/view':
         specifier: 8.0.0
         version: 8.0.0
+      '@misskey-dev/sharp-read-bmp':
+        specifier: ^1.1.1
+        version: 1.1.1
+      '@misskey-dev/summaly':
+        specifier: ^5.0.3
+        version: 5.0.3
       '@nestjs/common':
         specifier: 10.0.5
         version: 10.0.5(reflect-metadata@0.1.13)(rxjs@7.8.1)
@@ -333,8 +339,8 @@ importers:
         specifier: 7.5.4
         version: 7.5.4
       sharp:
-        specifier: 0.32.3
-        version: 0.32.3
+        specifier: 0.32.6
+        version: 0.32.6
       sharp-read-bmp:
         specifier: github:misskey-dev/sharp-read-bmp
         version: github.com/misskey-dev/sharp-read-bmp/05f99387a5392e87b9c22868ffe8cf0699d33481
@@ -5291,6 +5297,27 @@ packages:
     resolution: {integrity: sha512-9b8mPpKrfeGRuhFH5iO1iwCLeIIsV6+H1sRfxbkoGXIyQE2BTsPd9zqSqQJ+pv5sJ/hT5M1zvOFL02MnEezFug==}
     dev: true
 
+  /@misskey-dev/sharp-read-bmp@1.1.1:
+    resolution: {integrity: sha512-X52BQYL/I9mafypQ+wBhst+BUlYiPWnHhKGcF6ybcYSLl+zhcV0q5mezIXHozhM0Sv0A7xCdrWmR7TCNxHLrtQ==}
+    dependencies:
+      decode-bmp: 0.2.1
+      decode-ico: 0.4.1
+      sharp: 0.32.6
+    dev: false
+
+  /@misskey-dev/summaly@5.0.3:
+    resolution: {integrity: sha512-jVkuLEDrq2FaeHL8VY51LTqB6j0Jv5L7s0nmKGKMnE0jPBpSj6flswnZgntGmz5mbdCj47utEqu8FY43kH7PVg==}
+    dependencies:
+      cheerio: 1.0.0-rc.12
+      escape-regexp: 0.0.1
+      got: 12.6.1
+      html-entities: 2.3.2
+      iconv-lite: 0.6.3
+      jschardet: 3.0.0
+      private-ip: 2.3.3
+      trace-redirect: 1.0.6
+    dev: false
+
   /@mole-inc/bin-wrapper@8.0.1:
     resolution: {integrity: sha512-sTGoeZnjI8N4KS+sW2AN95gDBErhAguvkw/tWdCjeM8bvxpz5lqrnd0vOJABA1A+Ic3zED7PYoLP/RANLgVotA==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
@@ -8207,7 +8234,7 @@ packages:
     resolution: {integrity: sha512-OOi3kL+FZDnPhVzsfD37J88FNeZh6gQsGcLc95NbeURRGvmSjeXiDcyWzF2o3yh/gQAUn2uhh/e+CPCa5nwAxw==}
     deprecated: This is a stub types definition. sharp provides its own type definitions, so you do not need this installed.
     dependencies:
-      sharp: 0.32.3
+      sharp: 0.32.6
     dev: true
 
   /@types/sinon@10.0.13:
@@ -11215,10 +11242,6 @@ packages:
     resolution: {integrity: sha512-reYkTUJAZb9gUuZ2RvVCNhVHdg62RHnJ7WJl8ftMi4diZ6NWlciOzQN88pUhSELEwflJht4oQDv0F0BMlwaYtA==}
     engines: {node: '>=8'}
     dev: true
-
-  /detect-libc@2.0.1:
-    resolution: {integrity: sha512-463v3ZeIrcWtdgIg6vI6XUncguvr2TnGl4SzDXinkt9mSLpBJKXT3mW6xT3VQdDN11+WVs29pgvivTc4Lp8v+w==}
-    engines: {node: '>=8'}
 
   /detect-libc@2.0.2:
     resolution: {integrity: sha512-UX6sGumvvqSaXgdKGUsgZWqcUyIXZ/vZTrlRT/iobiKhGL0zL4d3osHj3uqllWJK+i+sixDS/3COVEOFbupFyw==}
@@ -18925,20 +18948,6 @@ packages:
       kind-of: 6.0.3
     dev: true
 
-  /sharp@0.32.3:
-    resolution: {integrity: sha512-i1gFPiNqyqxC4ouVvCKj5G8WfPIMeeSxpKcMrjic6NY4e8zktW7bIdqHPc3FCG+pNKU/XCEabKA57hhvZi8UmQ==}
-    engines: {node: '>=14.15.0'}
-    requiresBuild: true
-    dependencies:
-      color: 4.2.3
-      detect-libc: 2.0.1
-      node-addon-api: 6.1.0
-      prebuild-install: 7.1.1
-      semver: 7.5.4
-      simple-get: 4.0.1
-      tar-fs: 3.0.4
-      tunnel-agent: 0.6.0
-
   /sharp@0.32.6:
     resolution: {integrity: sha512-KyLTWwgcR9Oe4d9HwCwNM2l7+J0dUQwn/yf7S0EnTtb0eVS4RxO0eUSvxPtzT4F3SY+C4K6fqdv/DO27sJ/v/w==}
     engines: {node: '>=14.15.0'}
@@ -18952,7 +18961,6 @@ packages:
       simple-get: 4.0.1
       tar-fs: 3.0.4
       tunnel-agent: 0.6.0
-    dev: false
 
   /shebang-command@1.2.0:
     resolution: {integrity: sha512-EV3L1+UQWGor21OmnvojK36mhg+TyIKDh3iFBKBohr5xeXIhNBcx8oWdgkTEEQ+BEFFYdLRuqMfd5L84N1V5Vg==}
