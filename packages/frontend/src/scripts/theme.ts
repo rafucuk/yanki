@@ -21,25 +21,9 @@ export const themeProps = Object.keys(lightTheme.props).filter(key => !key.start
 export const getBuiltinThemes = () => Promise.all(
 	[
 		'l-light',
-		'l-coffee',
-		'l-apricot',
-		'l-rainy',
-		'l-botanical',
-		'l-vivid',
-		'l-cherry',
-		'l-sushi',
-		'l-u0',
-
+		'l-yanki',
 		'd-dark',
-		'd-persimmon',
-		'd-astro',
-		'd-future',
-		'd-botanical',
-		'd-green-lime',
-		'd-green-orange',
-		'd-cherry',
-		'd-ice',
-		'd-u0',
+		'd-yanki',
 	].map(name => import(`../themes/${name}.json5`).then(({ default: _default }): Theme => _default)),
 );
 
