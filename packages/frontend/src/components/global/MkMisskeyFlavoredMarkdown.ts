@@ -1,6 +1,6 @@
 import { VNode, h } from 'vue';
 import * as mfm from 'mfm-js';
-import * as Misskey from 'misskey-js';
+import * as Yanki from 'misskey-js';
 import MkUrl from '@/components/global/MkUrl.vue';
 import MkLink from '@/components/MkLink.vue';
 import MkMention from '@/components/MkMention.vue';
@@ -26,8 +26,8 @@ export default function(props: {
 	text: string;
 	plain?: boolean;
 	nowrap?: boolean;
-	author?: Misskey.entities.UserLite;
-	i?: Misskey.entities.UserLite;
+	author?: Yanki.entities.UserLite;
+	i?: Yanki.entities.UserLite;
 	isNote?: boolean;
 	emojiUrls?: string[];
 	rootScale?: number;

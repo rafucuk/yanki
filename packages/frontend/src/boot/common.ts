@@ -22,7 +22,7 @@ import { fetchCustomEmojis } from '@/custom-emojis';
 import { mainRouter } from '@/router';
 
 export async function common(createVue: () => App<Element>) {
-	console.info(`Misskey v${version}`);
+	console.info(`Yanki v${version}`);
 
 	if (_DEV_) {
 		console.warn('Development mode!!!');

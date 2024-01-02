@@ -12,7 +12,7 @@ doctype html
 	 | | | | |_ -|_ -| '_| -_| | |
 	 |_|_|_|_|___|___|_,_|___|_  |
 	                         |___|
-	 Thank you for using Misskey!
+	 Thank you for using Yanki!
 	 If you are reading this message... how about joining the development?
 	 https://github.com/misskey-dev/misskey
 	 
@@ -21,16 +21,16 @@ html
 
 	head
 		meta(charset='utf-8')
-		meta(name='application-name' content='Misskey')
+		meta(name='application-name' content='Yanki')
 		meta(name='referrer' content='origin')
 		meta(name='theme-color' content= themeColor || '#86b300')
 		meta(name='theme-color-orig' content= themeColor || '#86b300')
-		meta(property='og:site_name' content= instanceName || 'Misskey')
+		meta(property='og:site_name' content= instanceName || 'Yanki')
 		meta(name='viewport' content='width=device-width, initial-scale=1')
 		link(rel='icon' href= icon || '/favicon.ico')
 		link(rel='apple-touch-icon' href= icon || '/apple-touch-icon.png')
 		link(rel='manifest' href='/manifest.json')
-		link(rel='search' type='application/opensearchdescription+xml' title=(title || "Misskey") href=`${url}/opensearch.xml`)
+		link(rel='search' type='application/opensearchdescription+xml' title=(title || "Yanki") href=`${url}/opensearch.xml`)
 		link(rel='prefetch' href=serverErrorImageUrl)
 		link(rel='prefetch' href=infoImageUrl)
 		link(rel='prefetch' href=notFoundImageUrl)
@@ -47,7 +47,7 @@ html
 
 		title
 			block title
-				= title || 'Misskey'
+				= title || 'Yanki'
 
 		block desc
 			meta(name='description' content= desc || '✨🌎✨ A interplanetary communication platform ✨🚀✨')
@@ -55,7 +55,7 @@ html
 		block meta
 
 		block og
-			meta(property='og:title'       content= title || 'Misskey')
+			meta(property='og:title'       content= title || 'Yanki')
 			meta(property='og:description' content= desc || '✨🌎✨ A interplanetary communication platform ✨🚀✨')
 			meta(property='og:image'       content= img)
 			meta(property='twitter:card'   content='summary')

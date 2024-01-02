@@ -1,4 +1,4 @@
-import type * as Misskey from 'misskey-js';
+import type * as Yanki from 'misskey-js';
 
 export type SwMessageOrderType = 'post' | 'push';
 
@@ -12,10 +12,10 @@ export type SwMessage = {
 
 // Defined also @/core/PushNotificationService.ts#L12
 type PushNotificationDataSourceMap = {
-	notification: Misskey.entities.Notification;
+	notification: Yanki.entities.Notification;
 	unreadAntennaNote: {
 		antenna: { id: string; name: string };
-		note: Misskey.entities.Note;
+		note: Yanki.entities.Note;
 	};
 	readAllNotifications: undefined;
 };

@@ -4,7 +4,7 @@
 
 <script lang="ts" setup>
 import { } from 'vue';
-import * as Misskey from 'misskey-js';
+import * as Yanki from 'misskey-js';
 import XText from './page.text.vue';
 import XSection from './page.section.vue';
 import XImage from './page.image.vue';
@@ -24,6 +24,6 @@ function getComponent(type: string) {
 defineProps<{
 	block: Block,
 	h: number,
-	page: Misskey.entities.Page,
+	page: Yanki.entities.Page,
 }>();
 </script>

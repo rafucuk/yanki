@@ -104,7 +104,7 @@ export class QueueModule implements OnApplicationShutdown {
 		if (process.env.NODE_ENV === 'test') {
 			// XXX:
 			// Shutting down the existing connections causes errors on Jest as
-			// Misskey has asynchronous postgres/redis connections that are not
+			// Yanki has asynchronous postgres/redis connections that are not
 			// awaited.
 			// Let's wait for some random time for them to finish.
 			await setTimeout(5000);

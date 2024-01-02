@@ -1,14 +1,14 @@
-import * as Misskey from 'misskey-js';
+import * as Yanki from 'misskey-js';
 import { markRaw } from 'vue';
 import { $i } from '@/account';
 import { url } from '@/config';
 
-let stream: Misskey.Stream | null = null;
+let stream: Yanki.Stream | null = null;
 
-export function useStream(): Misskey.Stream {
+export function useStream(): Yanki.Stream {
 	if (stream) return stream;
 
-	stream = markRaw(new Misskey.Stream(url, $i ? {
+	stream = markRaw(new Yanki.Stream(url, $i ? {
 		token: $i.token,
 	} : null));
 

@@ -1,5 +1,5 @@
 import { reactive, ref } from 'vue';
-import * as Misskey from 'misskey-js';
+import * as Yanki from 'misskey-js';
 import { readAndCompressImage } from 'browser-image-resizer';
 import { getCompressionConfig } from './upload/compress-config';
 import { defaultStore } from '@/store';
@@ -28,7 +28,7 @@ export function uploadFile(
 	folder?: any,
 	name?: string,
 	keepOriginal: boolean = defaultStore.state.keepOriginalUploading,
-): Promise<Misskey.entities.DriveFile> {
+): Promise<Yanki.entities.DriveFile> {
 	if ($i == null) throw new Error('Not logged in');
 
 	if (folder && typeof folder === 'object') folder = folder.id;

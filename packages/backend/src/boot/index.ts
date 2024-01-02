@@ -1,6 +1,6 @@
 
 /**
- * Misskey Entry Point!
+ * Yanki Entry Point!
  */
 
 import cluster from 'node:cluster';
@@ -14,7 +14,7 @@ import { workerMain } from './worker.js';
 
 import 'reflect-metadata';
 
-process.title = `Misskey (${cluster.isPrimary ? 'master' : 'worker'})`;
+process.title = `Yanki (${cluster.isPrimary ? 'master' : 'worker'})`;
 
 Error.stackTraceLimit = Infinity;
 EventEmitter.defaultMaxListeners = 128;

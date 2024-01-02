@@ -25,7 +25,7 @@ const themeColor = chalk.hex('#86b300');
 
 function greet() {
 	if (!envOption.quiet) {
-		//#region Misskey logo
+		//#region Yanki logo
 		const v = `v${meta.version}`;
 		console.log(themeColor('  _____ _         _           '));
 		console.log(themeColor(' |     |_|___ ___| |_ ___ _ _ '));
@@ -34,15 +34,15 @@ function greet() {
 		console.log(' ' + chalk.gray(v) + themeColor('                        |___|\n'.substring(v.length)));
 		//#endregion
 
-		console.log(' Misskey is an open-source decentralized microblogging platform.');
-		console.log(chalk.rgb(255, 136, 0)(' If you like Misskey, please donate to support development. https://www.patreon.com/syuilo'));
+		console.log(' Yanki is an open-source decentralized microblogging platform.');
+		console.log(chalk.rgb(255, 136, 0)(' If you like Yanki, please donate to support development. https://www.patreon.com/syuilo'));
 
 		console.log('');
 		console.log(chalkTemplate`--- ${os.hostname()} {gray (PID: ${process.pid.toString()})} ---`);
 	}
 
-	bootLogger.info('Welcome to Misskey!');
-	bootLogger.info(`Misskey v${meta.version}`, null, true);
+	bootLogger.info('Welcome to Yanki!');
+	bootLogger.info(`Yanki v${meta.version}`, null, true);
 }
 
 /**
@@ -72,7 +72,7 @@ export async function masterMain() {
 		await server();
 	}
 
-	bootLogger.succ('Misskey initialized');
+	bootLogger.succ('Yanki initialized');
 
 	if (!envOption.disableClustering) {
 		await spawnWorkers(config.clusterLimit);

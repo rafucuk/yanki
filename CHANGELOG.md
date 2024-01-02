@@ -229,8 +229,8 @@ Meilisearchの設定に`index`が必要になりました。値はMisskeyサー�
 
 ### Server
 - フォローインポートなどでの大量のフォロー等操作をキューイングするように #10544 @nmkj-io
-- Misskey Webでのサーバーサイドエラー画面を改善
-- Misskey Webでのサーバーサイドエラーのログが残るように
+- Yanki Webでのサーバーサイドエラー画面を改善
+- Yanki Webでのサーバーサイドエラーのログが残るように
 - ノート作成時のアンテナ追加パフォーマンスを改善
 - アンテナとロールTLのuntil/sinceプロパティが動くように
 
@@ -357,7 +357,7 @@ Meilisearchの設定に`index`が必要になりました。値はMisskeyサー�
 ## 13.10.1
 
 ### Client
-- Misskey PlayのPlayボタンを押した時にエラーが発生する問題を修正
+- Yanki PlayのPlayボタンを押した時にエラーが発生する問題を修正
 
 ## 13.10.0
 
@@ -785,7 +785,7 @@ Meilisearchの設定に`index`が必要になりました。値はMisskeyサー�
 ## 13.0.0 (2023/01/16)
 
 ### TL;DR
-- New features (Role system, Misskey Play, New widgets, New charts, 🍪👈, etc)
+- New features (Role system, Yanki Play, New widgets, New charts, 🍪👈, etc)
 - Rewriten backend
 - Better performance (backend and frontend)
 - Various usability improvements
@@ -794,14 +794,14 @@ Meilisearchの設定に`index`が必要になりました。値はMisskeyサー�
 ### Notable features
 - ロール機能
 	- 従来より柔軟にユーザーのポリシーを管理できます。例えば、「インスタンスのパトロンはアンテナを30個まで作れる」「基本的にLTLは見れないが、許可した人だけ見れる」「招待制インスタンスだけどユーザーなら誰でも他者を招待できる」のような運用はもちろん、「ローカルユーザーかつアカウント作成から1日未満のユーザーはパブリックな投稿を行えない」のように複数条件を組み合わせて、自動でロールを付与する設定も可能です。
-- Misskey Play
+- Yanki Play
 	- 従来の動的なPagesに代わる、新しいプラットフォームです。動的なコンテンツ(アプリケーション)に特化していて、Pagesに比べてはるかに柔軟なアプリケーションを作成可能です。
 
 ### Changes
 #### For server admins
 - Node.js 18.x or later is required
 - PostgreSQL 15.x is required
-	- Misskey not using 15 specific features at 13.0.0, but may do so in the future.
+	- Yanki not using 15 specific features at 13.0.0, but may do so in the future.
 	- Docker環境でPostgreSQLのアップデートを行う際のガイドはこちら: https://github.com/misskey-dev/misskey/pull/9641#issue-1536336620
 - Elasticsearchのサポートが削除されました
 	- 代わりに今後任意の検索プロバイダを設定できる仕組みを構想しています。その仕組みを使えば今まで通りElasticsearchも利用できます
@@ -844,7 +844,7 @@ Meilisearchの設定に`index`が必要になりました。値はMisskeyサー�
 
 ### Improvements
 - Role system @syuilo
-- Misskey Play @syuilo
+- Yanki Play @syuilo
 - Introduce retention-rate aggregation @syuilo
 - Make possible to export favorited notes @syuilo
 - Add per user pv chart @syuilo
@@ -1219,7 +1219,7 @@ same as 12.112.0
 
 ### Changes
 - ノートの最大文字数を設定できる機能が廃止され、デフォルトで一律3000文字になりました @syuilo
-- Misskey can no longer terminate HTTPS connections. @Johann150
+- Yanki can no longer terminate HTTPS connections. @Johann150
   - If you did not use a reverse proxy (e.g. nginx) before, you will probably need to adjust
     your configuration file and set up a reverse proxy. The `https` configuration key is no
     longer recognized!
@@ -1374,7 +1374,7 @@ same as 12.112.0
 - カスタム絵文字一括編集機能
 - カスタム絵文字一括インポート
 - 投稿フォームで一時的に投稿するアカウントを切り替えられるように
-- Unifying Misskey-specific IRIs in JSON-LD `@context`
+- Unifying Yanki-specific IRIs in JSON-LD `@context`
 - クライアントのパフォーマンス向上
 - セキュリティの向上
 

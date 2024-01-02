@@ -1,4 +1,4 @@
-import * as Misskey from 'misskey-js';
+import * as Yanki from 'misskey-js';
 import { defineAsyncComponent } from 'vue';
 import { i18n } from '@/i18n';
 import copyToClipboard from '@/scripts/copy-to-clipboard';
@@ -6,7 +6,7 @@ import * as os from '@/os';
 import { MenuItem } from '@/types/menu';
 import { defaultStore } from '@/store';
 
-function rename(file: Misskey.entities.DriveFile) {
+function rename(file: Yanki.entities.DriveFile) {
 	os.inputText({
 		title: i18n.ts.renameFile,
 		placeholder: i18n.ts.inputNewFileName,
@@ -20,7 +20,7 @@ function rename(file: Misskey.entities.DriveFile) {
 	});
 }
 
-function describe(file: Misskey.entities.DriveFile) {
+function describe(file: Yanki.entities.DriveFile) {
 	os.popup(defineAsyncComponent(() => import('@/components/MkFileCaptionEditWindow.vue')), {
 		default: file.comment != null ? file.comment : '',
 		file: file,
@@ -34,7 +34,7 @@ function describe(file: Misskey.entities.DriveFile) {
 	}, 'closed');
 }
 
-function toggleSensitive(file: Misskey.entities.DriveFile) {
+function toggleSensitive(file: Yanki.entities.DriveFile) {
 	os.api('drive/files/update', {
 		fileId: file.id,
 		isSensitive: !file.isSensitive,
@@ -47,7 +47,7 @@ function toggleSensitive(file: Misskey.entities.DriveFile) {
 	});
 }
 
-function copyUrl(file: Misskey.entities.DriveFile) {
+function copyUrl(file: Yanki.entities.DriveFile) {
 	copyToClipboard(file.url);
 	os.success();
 }
@@ -56,7 +56,7 @@ function addApp() {
 	alert('not implemented yet');
 }
 */
-async function deleteFile(file: Misskey.entities.DriveFile) {
+async function deleteFile(file: Yanki.entities.DriveFile) {
 	const { canceled } = await os.confirm({
 		type: 'warning',
 		text: i18n.t('driveFileDeleteConfirm', { name: file.name }),
@@ -68,7 +68,7 @@ async function deleteFile(file: Misskey.entities.DriveFile) {
 	});
 }
 
-export function getDriveFileMenu(file: Misskey.entities.DriveFile, folder?: Misskey.entities.DriveFolder | null): MenuItem[] {
+export function getDriveFileMenu(file: Yanki.entities.DriveFile, folder?: Yanki.entities.DriveFolder | null): MenuItem[] {
 	const isImage = file.type.startsWith('image/');
 	let menu;
 	menu = [{

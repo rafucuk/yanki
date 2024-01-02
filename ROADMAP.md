@@ -31,9 +31,9 @@ Once the development of the feature has settled down, this may be an opportunity
 - Rewriting in Rust?
 
 ## (4) Change the world
-It is time to promote Misskey and change the world.
+It is time to promote Yanki and change the world.
 
 - Become more major than services such as Twitter and become critical infrastructure for the world
 - MiOS will be developed and integrated into various systems - What is MiOS?
 - Letting Ai-chan interfere with the real world
-- Make Misskey a member of GAFA; Misskey's office must be a reinforced concrete brutalist building with a courtyard.
+- Make Yanki a member of GAFA; Yanki's office must be a reinforced concrete brutalist building with a courtyard.

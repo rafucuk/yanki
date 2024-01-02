@@ -8,7 +8,7 @@
 <script lang="ts" setup>
 import { defineAsyncComponent } from 'vue';
 import * as mfm from 'mfm-js';
-import * as Misskey from 'misskey-js';
+import * as Yanki from 'misskey-js';
 import { TextBlock } from './block.type';
 import { extractUrlFromMfm } from '@/scripts/extract-url-from-mfm';
 import { $i } from '@/account';
@@ -17,7 +17,7 @@ const MkUrlPreview = defineAsyncComponent(() => import('@/components/MkUrlPrevie
 
 const props = defineProps<{
 	block: TextBlock,
-	page: Misskey.entities.Page,
+	page: Yanki.entities.Page,
 }>();
 
 const urls = props.block.text ? extractUrlFromMfm(mfm.parse(props.block.text)) : [];

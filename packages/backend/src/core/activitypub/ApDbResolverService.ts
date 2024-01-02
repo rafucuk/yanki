@@ -70,7 +70,7 @@ export class ApDbResolverService implements OnApplicationShutdown {
 	}
 
 	/**
-	 * AP Note => Misskey Note in DB
+	 * AP Note => Yanki Note in DB
 	 */
 	@bindThis
 	public async getNoteFromApId(value: string | IObject): Promise<Note | null> {
@@ -90,7 +90,7 @@ export class ApDbResolverService implements OnApplicationShutdown {
 	}
 
 	/**
-	 * AP Person => Misskey User in DB
+	 * AP Person => Yanki User in DB
 	 */
 	@bindThis
 	public async getUserFromApId(value: string | IObject): Promise<LocalUser | RemoteUser | null> {
@@ -112,7 +112,7 @@ export class ApDbResolverService implements OnApplicationShutdown {
 	}
 
 	/**
-	 * AP KeyId => Misskey User and Key
+	 * AP KeyId => Yanki User and Key
 	 */
 	@bindThis
 	public async getAuthUserFromKeyId(keyId: string): Promise<{
@@ -138,7 +138,7 @@ export class ApDbResolverService implements OnApplicationShutdown {
 	}
 
 	/**
-	 * AP Actor id => Misskey User and Key
+	 * AP Actor id => Yanki User and Key
 	 */
 	@bindThis
 	public async getAuthUserFromApId(uri: string): Promise<{

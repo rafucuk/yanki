@@ -6,11 +6,11 @@
 
 <script lang="ts" setup>
 import { onMounted, nextTick } from 'vue';
-import * as Misskey from 'misskey-js';
+import * as Yanki from 'misskey-js';
 import XBlock from './page.block.vue';
 
 defineProps<{
-	page: Misskey.entities.Page,
+	page: Yanki.entities.Page,
 }>();
 </script>
 

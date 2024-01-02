@@ -109,8 +109,8 @@ export class ClientServerService {
 
 		const instance = await this.metaService.fetch(true);
 
-		res.short_name = instance.name ?? 'Misskey';
-		res.name = instance.name ?? 'Misskey';
+		res.short_name = instance.name ?? 'Yanki';
+		res.name = instance.name ?? 'Yanki';
 		if (instance.themeColor) res.theme_color = instance.themeColor;
 
 		reply.header('Cache-Control', 'max-age=300');
@@ -120,7 +120,7 @@ export class ClientServerService {
 	@bindThis
 	private generateCommonPugData(meta: Meta) {
 		return {
-			instanceName: meta.name ?? 'Misskey',
+			instanceName: meta.name ?? 'Yanki',
 			icon: meta.iconUrl,
 			themeColor: meta.themeColor,
 			serverErrorImageUrl: meta.serverErrorImageUrl ?? 'https://xn--931a.moe/assets/error.jpg',
@@ -332,7 +332,7 @@ export class ClientServerService {
 		fastify.get('/opensearch.xml', async (request, reply) => {
 			const meta = await this.metaService.fetch();
 
-			const name = meta.name ?? 'Misskey';
+			const name = meta.name ?? 'Yanki';
 			let content = '';
 			content += '<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/" xmlns:moz="http://www.mozilla.org/2006/browser/search/">';
 			content += `<ShortName>${name}</ShortName>`;
@@ -354,7 +354,7 @@ export class ClientServerService {
 			return await reply.view('base', {
 				img: meta.bannerUrl,
 				url: this.config.url,
-				title: meta.name ?? 'Misskey',
+				title: meta.name ?? 'Yanki',
 				desc: meta.description,
 				...this.generateCommonPugData(meta),
 			});

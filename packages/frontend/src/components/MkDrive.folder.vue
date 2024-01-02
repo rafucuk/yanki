@@ -28,7 +28,7 @@
 
 <script lang="ts" setup>
 import { computed, defineAsyncComponent, ref } from 'vue';
-import * as Misskey from 'misskey-js';
+import * as Yanki from 'misskey-js';
 import * as os from '@/os';
 import { i18n } from '@/i18n';
 import { defaultStore } from '@/store';
@@ -36,7 +36,7 @@ import { claimAchievement } from '@/scripts/achievements';
 import copyToClipboard from '@/scripts/copy-to-clipboard';
 
 const props = withDefaults(defineProps<{
-	folder: Misskey.entities.DriveFolder;
+	folder: Yanki.entities.DriveFolder;
 	isSelected?: boolean;
 	selectMode?: boolean;
 }>(), {
@@ -45,11 +45,11 @@ const props = withDefaults(defineProps<{
 });
 
 const emit = defineEmits<{
-	(ev: 'chosen', v: Misskey.entities.DriveFolder): void;
-	(ev: 'move', v: Misskey.entities.DriveFolder): void;
-	(ev: 'upload', file: File, folder: Misskey.entities.DriveFolder);
-	(ev: 'removeFile', v: Misskey.entities.DriveFile['id']): void;
-	(ev: 'removeFolder', v: Misskey.entities.DriveFolder['id']): void;
+	(ev: 'chosen', v: Yanki.entities.DriveFolder): void;
+	(ev: 'move', v: Yanki.entities.DriveFolder): void;
+	(ev: 'upload', file: File, folder: Yanki.entities.DriveFolder);
+	(ev: 'removeFile', v: Yanki.entities.DriveFile['id']): void;
+	(ev: 'removeFolder', v: Yanki.entities.DriveFolder['id']): void;
 	(ev: 'dragstart'): void;
 	(ev: 'dragend'): void;
 }>();

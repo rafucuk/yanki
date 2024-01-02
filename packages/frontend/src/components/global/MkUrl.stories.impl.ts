@@ -37,7 +37,7 @@ export const Default = {
 		const popup = anchors.find(anchor => anchor !== a)!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
 		await expect(popup).toBeInTheDocument();
 		await expect(popup).toHaveAttribute('href', 'https://misskey-hub.net/');
-		await expect(popup).toHaveTextContent('Misskey Hub');
+		await expect(popup).toHaveTextContent('Yanki Hub');
 		await expect(popup).toHaveTextContent('Misskeyはオープンソースの分散型ソーシャルネットワーキングプラットフォームです。');
 		await expect(popup).toHaveTextContent('misskey-hub.net');
 		const icon = within(popup).getByRole('img');
@@ -56,7 +56,7 @@ export const Default = {
 				...commonHandlers,
 				rest.get('/url', (req, res, ctx) => {
 					return res(ctx.json({
-						title: 'Misskey Hub',
+						title: 'Yanki Hub',
 						icon: 'https://misskey-hub.net/favicon.ico',
 						description: 'Misskeyはオープンソースの分散型ソーシャルネットワーキングプラットフォームです。',
 						thumbnail: null,

@@ -32,7 +32,7 @@
 
 <script lang="ts" setup>
 import { watch } from 'vue';
-import * as Misskey from 'misskey-js';
+import * as Yanki from 'misskey-js';
 import XEmoji from './emojis.emoji.vue';
 import MkButton from '@/components/MkButton.vue';
 import MkInput from '@/components/MkInput.vue';
@@ -43,7 +43,7 @@ import { $i } from '@/account';
 
 const customEmojiTags = getCustomEmojiTags();
 let q = $ref('');
-let searchEmojis = $ref<Misskey.entities.CustomEmoji[]>(null);
+let searchEmojis = $ref<Yanki.entities.CustomEmoji[]>(null);
 let selectedTags = $ref(new Set());
 
 function search() {

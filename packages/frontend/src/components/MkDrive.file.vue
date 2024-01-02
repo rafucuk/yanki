@@ -34,7 +34,7 @@
 
 <script lang="ts" setup>
 import { computed, ref } from 'vue';
-import * as Misskey from 'misskey-js';
+import * as Yanki from 'misskey-js';
 import MkDriveFileThumbnail from '@/components/MkDriveFileThumbnail.vue';
 import bytes from '@/filters/bytes';
 import * as os from '@/os';
@@ -43,8 +43,8 @@ import { $i } from '@/account';
 import { getDriveFileMenu } from '@/scripts/get-drive-file-menu';
 
 const props = withDefaults(defineProps<{
-	file: Misskey.entities.DriveFile;
-	folder: Misskey.entities.DriveFolder | null;
+	file: Yanki.entities.DriveFile;
+	folder: Yanki.entities.DriveFolder | null;
 	isSelected?: boolean;
 	selectMode?: boolean;
 }>(), {
@@ -53,7 +53,7 @@ const props = withDefaults(defineProps<{
 });
 
 const emit = defineEmits<{
-	(ev: 'chosen', r: Misskey.entities.DriveFile): void;
+	(ev: 'chosen', r: Yanki.entities.DriveFile): void;
 	(ev: 'dragstart'): void;
 	(ev: 'dragend'): void;
 }>();

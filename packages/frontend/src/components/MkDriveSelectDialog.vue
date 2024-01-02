@@ -20,7 +20,7 @@
 
 <script lang="ts" setup>
 import { ref, shallowRef } from 'vue';
-import * as Misskey from 'misskey-js';
+import * as Yanki from 'misskey-js';
 import XDrive from '@/components/MkDrive.vue';
 import MkModalWindow from '@/components/MkModalWindow.vue';
 import number from '@/filters/number';
@@ -34,13 +34,13 @@ withDefaults(defineProps<{
 });
 
 const emit = defineEmits<{
-	(ev: 'done', r?: Misskey.entities.DriveFile[]): void;
+	(ev: 'done', r?: Yanki.entities.DriveFile[]): void;
 	(ev: 'closed'): void;
 }>();
 
 const dialog = shallowRef<InstanceType<typeof MkModalWindow>>();
 
-const selected = ref<Misskey.entities.DriveFile[]>([]);
+const selected = ref<Yanki.entities.DriveFile[]>([]);
 
 function ok() {
 	emit('done', selected.value);
@@ -52,7 +52,7 @@ function cancel() {
 	dialog.value?.close();
 }
 
-function onChangeSelection(files: Misskey.entities.DriveFile[]) {
+function onChangeSelection(files: Yanki.entities.DriveFile[]) {
 	selected.value = files;
 }
 </script>

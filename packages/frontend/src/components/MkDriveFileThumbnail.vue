@@ -16,11 +16,11 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue';
-import * as Misskey from 'misskey-js';
+import * as Yanki from 'misskey-js';
 import ImgWithBlurhash from '@/components/MkImgWithBlurhash.vue';
 
 const props = defineProps<{
-	file: Misskey.entities.DriveFile;
+	file: Yanki.entities.DriveFile;
 	fit: string;
 }>();
 

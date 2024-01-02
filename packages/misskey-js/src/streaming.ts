@@ -21,7 +21,7 @@ type StreamEvents = {
 } & BroadcastEvents;
 
 /**
- * Misskey stream connection
+ * Yanki stream connection
  */
 export default class Stream extends EventEmitter<StreamEvents> {
 	private stream: ReconnectingWebsocket;

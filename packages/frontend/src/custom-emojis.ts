@@ -1,11 +1,11 @@
 import { shallowRef, computed, markRaw, watch } from 'vue';
-import * as Misskey from 'misskey-js';
+import * as Yanki from 'misskey-js';
 import { api, apiGet } from './os';
 import { useStream } from '@/stream';
 import { get, set } from '@/scripts/idb-proxy';
 
 const storageCache = await get('emojis');
-export const customEmojis = shallowRef<Misskey.entities.CustomEmoji[]>(Array.isArray(storageCache) ? storageCache : []);
+export const customEmojis = shallowRef<Yanki.entities.CustomEmoji[]>(Array.isArray(storageCache) ? storageCache : []);
 export const customEmojiCategories = computed<[ ...string[], null ]>(() => {
 	const categories = new Set<string>();
 	for (const emoji of customEmojis.value) {
@@ -16,7 +16,7 @@ export const customEmojiCategories = computed<[ ...string[], null ]>(() => {
 	return markRaw([...Array.from(categories), null]);
 });
 
-export const customEmojisMap = new Map<string, Misskey.entities.CustomEmoji>();
+export const customEmojisMap = new Map<string, Yanki.entities.CustomEmoji>();
 watch(customEmojis, emojis => {
 	customEmojisMap.clear();
 	for (const emoji of emojis) {
@@ -33,7 +33,7 @@ stream.on('emojiAdded', emojiData => {
 });
 
 stream.on('emojiUpdated', emojiData => {
-	customEmojis.value = customEmojis.value.map(item => emojiData.emojis.find(search => search.name === item.name) as Misskey.entities.CustomEmoji ?? item);
+	customEmojis.value = customEmojis.value.map(item => emojiData.emojis.find(search => search.name === item.name) as Yanki.entities.CustomEmoji ?? item);
 	set('emojis', customEmojis.value);
 });
 

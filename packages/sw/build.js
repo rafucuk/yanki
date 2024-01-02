@@ -18,7 +18,7 @@ const buildOptions = {
 		_DEV_: JSON.stringify(process.env.NODE_ENV !== 'production'),
 		_ENV_: JSON.stringify(process.env.NODE_ENV ?? ''), // `NODE_ENV`が`undefined`なとき`JSON.stringify`が`undefined`を返してエラーになってしまうので`??`を使っている
 		_LANGS_: JSON.stringify(Object.entries(locales).map(([k, v]) => [k, v._lang_])),
-		_PERF_PREFIX_: JSON.stringify('Misskey:'),
+		_PERF_PREFIX_: JSON.stringify('Yanki:'),
 		_VERSION_: JSON.stringify(meta.version),
 	},
 	entryPoints: [`${__dirname}/src/sw.ts`],

@@ -19,7 +19,7 @@
 
 <script lang="ts" setup>
 import { defineAsyncComponent } from 'vue';
-import * as Misskey from 'misskey-js';
+import * as Yanki from 'misskey-js';
 import { SectionBlock } from './block.type';
 
 const XBlock = defineAsyncComponent(() => import('./page.block.vue'));
@@ -27,7 +27,7 @@ const XBlock = defineAsyncComponent(() => import('./page.block.vue'));
 defineProps<{
 	block: SectionBlock,
 	h: number,
-	page: Misskey.entities.Page,
+	page: Yanki.entities.Page,
 }>();
 </script>
 

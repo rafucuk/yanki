@@ -30,7 +30,7 @@
 import { } from 'vue';
 import { noteVisibilities } from 'misskey-js';
 import * as Acct from 'misskey-js/built/acct';
-import * as Misskey from 'misskey-js';
+import * as Yanki from 'misskey-js';
 import MkButton from '@/components/MkButton.vue';
 import MkPostForm from '@/components/MkPostForm.vue';
 import * as os from '@/os';
@@ -47,12 +47,12 @@ let title = $ref(urlParams.get('title'));
 const text = urlParams.get('text');
 const url = urlParams.get('url');
 let initialText = $ref<string | undefined>();
-let reply = $ref<Misskey.entities.Note | undefined>();
-let renote = $ref<Misskey.entities.Note | undefined>();
+let reply = $ref<Yanki.entities.Note | undefined>();
+let renote = $ref<Yanki.entities.Note | undefined>();
 let visibility = $ref(noteVisibilities.includes(visibilityQuery) ? visibilityQuery : undefined);
 let localOnly = $ref(localOnlyQuery === '0' ? false : localOnlyQuery === '1' ? true : undefined);
-let files = $ref([] as Misskey.entities.DriveFile[]);
-let visibleUsers = $ref([] as Misskey.entities.User[]);
+let files = $ref([] as Yanki.entities.DriveFile[]);
+let visibleUsers = $ref([] as Yanki.entities.User[]);
 
 async function init() {
 	let noteText = '';

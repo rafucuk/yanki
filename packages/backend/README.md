@@ -1,2 +1,2 @@
-# Misskey Backend
+# Yanki Backend
 ![](../../assets/backend.png)

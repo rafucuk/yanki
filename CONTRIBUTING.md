@@ -1,5 +1,5 @@
 # Contribution guide
-We're glad you're interested in contributing Misskey! In this document you will find the information you need to contribute to the project.
+We're glad you're interested in contributing Yanki! In this document you will find the information you need to contribute to the project.
 
 > **Note**
 > This project uses Japanese as its major language, **but you do not need to translate and write the Issues/PRs in Japanese.**
@@ -15,7 +15,7 @@ Before creating an issue, please check the following:
 - To avoid duplication, please search for similar issues before creating a new issue.
 - Do not use Issues to ask questions or troubleshooting.
 	- Issues should only be used to feature requests, suggestions, and bug tracking.
-	- Please ask questions or troubleshooting in ~~the [Misskey Forum](https://forum.misskey.io/)~~ [GitHub Discussions](https://github.com/misskey-dev/misskey/discussions) or [Discord](https://discord.gg/Wp8gVStHW3).
+	- Please ask questions or troubleshooting in ~~the [Yanki Forum](https://forum.misskey.io/)~~ [GitHub Discussions](https://github.com/misskey-dev/misskey/discussions) or [Discord](https://discord.gg/Wp8gVStHW3).
 
 > **Warning**
 > Do not close issues that are about to be resolved. It should remain open until a commit that actually resolves it is merged.
@@ -96,7 +96,7 @@ An actual domain will be assigned so you can test the federation.
 > - To celebrate the release together 🎉
 
 ## Localization (l10n)
-Misskey uses [Crowdin](https://crowdin.com/project/misskey) for localization management.
+Yanki uses [Crowdin](https://crowdin.com/project/misskey) for localization management.
 You can improve our translations with your Crowdin account.
 Your changes in Crowdin are automatically submitted as a PR (with the title "New Crowdin translations") to the repository.
 The owner [@syuilo](https://github.com/syuilo) merges the PR into the develop branch before the next release.
@@ -171,11 +171,11 @@ TODO
 - `MISSKEY_WEBFINGER_USE_HTTP`: If it's set true, WebFinger requests will be http instead of https, useful for testing federation between servers in localhost. NEVER USE IN PRODUCTION.
 
 ## Continuous integration
-Misskey uses GitHub Actions for executing automated tests.
+Yanki uses GitHub Actions for executing automated tests.
 Configuration files are located in [`/.github/workflows`](/.github/workflows).
 
 ## Vue
-Misskey uses Vue(v3) as its front-end framework.
+Yanki uses Vue(v3) as its front-end framework.
 - Use TypeScript.
 - **When creating a new component, please use the Composition API (with [setup sugar](https://v3.vuejs.org/api/sfc-script-setup.html) and [ref sugar](https://github.com/vuejs/rfcs/discussions/369)) instead of the Options API.**
 	- Some of the existing components are implemented in the Options API, but it is an old implementation. Refactors that migrate those components to the Composition API are also welcome.
@@ -210,7 +210,7 @@ vue-routerとの最大の違いは、niraxは複数のルーターが存在す�
 
 ## Storybook
 
-Misskey uses [Storybook](https://storybook.js.org/) for UI development.
+Yanki uses [Storybook](https://storybook.js.org/) for UI development.
 
 ### Setup & Run
 

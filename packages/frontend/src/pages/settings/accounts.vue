@@ -15,7 +15,7 @@
 
 <script lang="ts" setup>
 import { defineAsyncComponent, ref } from 'vue';
-import type * as Misskey from 'misskey-js';
+import type * as Yanki from 'misskey-js';
 import FormSuspense from '@/components/form/suspense.vue';
 import MkButton from '@/components/MkButton.vue';
 import * as os from '@/os';
@@ -25,7 +25,7 @@ import { definePageMetadata } from '@/scripts/page-metadata';
 import MkUserCardMini from '@/components/MkUserCardMini.vue';
 
 const storedAccounts = ref<any>(null);
-const accounts = ref<Misskey.entities.UserDetailed[]>([]);
+const accounts = ref<Yanki.entities.UserDetailed[]>([]);
 
 const init = async () => {
 	getAccounts().then(accounts => {

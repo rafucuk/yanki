@@ -1,5 +1,5 @@
 #━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-# Misskey configuration
+# Yanki configuration
 #━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 #   ┌─────┐
@@ -15,14 +15,14 @@
 #───┘ Port and TLS settings └───────────────────────────────────
 
 #
-# Misskey supports two deployment options for public.
+# Yanki supports two deployment options for public.
 #
 
 # Option 1: With Reverse Proxy
 #
 #                 +----- https://example.tld/ ------------+
 #   +------+      |+-------------+      +----------------+|
-#   | User | ---> || Proxy (443) | ---> | Misskey (3000) ||
+#   | User | ---> || Proxy (443) | ---> | Yanki (3000) ||
 #   +------+      |+-------------+      +----------------+|
 #                 +---------------------------------------+
 #
@@ -33,15 +33,15 @@
 #
 #                 +- https://example.tld/ -+
 #   +------+      |   +---------------+    |
-#   | User | ---> |   | Misskey (443) |    |
+#   | User | ---> |   | Yanki (443) |    |
 #   +------+      |   +---------------+    |
 #                 +------------------------+
 #
-#   You need to run Misskey as root.
+#   You need to run Yanki as root.
 #   You need to set Certificate in 'https' section.
 
 # To use option 1, uncomment below line.
-port: 3000 # A port that your Misskey server should listen.
+port: 3000 # A port that your Yanki server should listen.
 
 # To use option 2, uncomment below lines.
 #port: 443

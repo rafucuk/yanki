@@ -35,10 +35,10 @@ export class WebhookDeliverProcessorService {
 			const res = await this.httpRequestService.send(job.data.to, {
 				method: 'POST',
 				headers: {
-					'User-Agent': 'Misskey-Hooks',
-					'X-Misskey-Host': this.config.host,
-					'X-Misskey-Hook-Id': job.data.webhookId,
-					'X-Misskey-Hook-Secret': job.data.secret,
+					'User-Agent': 'Yanki-Hooks',
+					'X-Yanki-Host': this.config.host,
+					'X-Yanki-Hook-Id': job.data.webhookId,
+					'X-Yanki-Hook-Secret': job.data.secret,
 					'Content-Type': 'application/json',
 				},
 				body: JSON.stringify({

@@ -165,7 +165,7 @@ export function loadConfig() {
 	mixin.apiUrl = `${mixin.scheme}://${mixin.host}/api`;
 	mixin.authUrl = `${mixin.scheme}://${mixin.host}/auth`;
 	mixin.driveUrl = `${mixin.scheme}://${mixin.host}/files`;
-	mixin.userAgent = `Misskey/${meta.version} (${config.url})`;
+	mixin.userAgent = `Yanki/${meta.version} (${config.url})`;
 	mixin.clientEntry = clientManifest['src/_boot_.ts'];
 	mixin.clientManifestExists = clientManifestExists;
 

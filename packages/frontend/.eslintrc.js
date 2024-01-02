@@ -85,7 +85,7 @@ module.exports = {
 		'$shallowRef': false,
 		'$computed': false,
 
-		// Misskey
+		// Yanki
 		'_DEV_': false,
 		'_LANGS_': false,
 		'_VERSION_': false,

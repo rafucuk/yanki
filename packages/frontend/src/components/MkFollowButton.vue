@@ -31,7 +31,7 @@
 
 <script lang="ts" setup>
 import { onBeforeUnmount, onMounted } from 'vue';
-import * as Misskey from 'misskey-js';
+import * as Yanki from 'misskey-js';
 import * as os from '@/os';
 import { useStream } from '@/stream';
 import { i18n } from '@/i18n';
@@ -39,7 +39,7 @@ import { claimAchievement } from '@/scripts/achievements';
 import { $i } from '@/account';
 
 const props = withDefaults(defineProps<{
-	user: Misskey.entities.UserDetailed,
+	user: Yanki.entities.UserDetailed,
 	full?: boolean,
 	large?: boolean,
 }>(), {
@@ -59,7 +59,7 @@ if (props.user.isFollowing == null) {
 		.then(onFollowChange);
 }
 
-function onFollowChange(user: Misskey.entities.UserDetailed) {
+function onFollowChange(user: Yanki.entities.UserDetailed) {
 	if (user.id === props.user.id) {
 		isFollowing = user.isFollowing;
 		hasPendingFollowRequestFromYou = user.hasPendingFollowRequestFromYou;

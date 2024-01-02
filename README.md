@@ -1,9 +1,9 @@
 <div align="center">
 <a href="https://misskey-hub.net">
-	<img src="./assets/title_float.svg" alt="Misskey logo" style="border-radius:50%" width="400"/>
+	<img src="./assets/title_float.svg" alt="Yanki logo" style="border-radius:50%" width="400"/>
 </a>
 
-**🌎 **[Misskey](https://misskey-hub.net/)** is an open source, decentralized social media platform that's free forever! 🚀**
+**🌎 **[Yanki](https://misskey-hub.net/)** is an open source, decentralized social media platform that's free forever! 🚀**
 
 ---
 
@@ -34,13 +34,13 @@
 
 ## ✨ Features
 - **ActivityPub support**\
-Not on Misskey? No problem! Not only can Misskey instances talk to each other, but you can make friends with people on other networks like Mastodon and Pixelfed!
+Not on Yanki? No problem! Not only can Yanki instances talk to each other, but you can make friends with people on other networks like Mastodon and Pixelfed!
 - **Reactions**\
 You can add emoji reactions to any post! No longer are you bound by a like button, show everyone exactly how you feel with the tap of a button.
 - **Drive**\
-With Misskey's built in drive, you get cloud storage right in your social media, where you can upload any files, make folders, and find media from posts you've made!
+With Yanki's built in drive, you get cloud storage right in your social media, where you can upload any files, make folders, and find media from posts you've made!
 - **Rich Web UI**\
-	Misskey has a rich and easy to use Web UI!
+	Yanki has a rich and easy to use Web UI!
 	It is highly customizable, from changing the layout and adding widgets to making custom themes.
 	Furthermore, plugins can be created using AiScript, an original programming language.
 - And much more...
@@ -51,7 +51,7 @@ With Misskey's built in drive, you get cloud storage right in your social media,
 
 ## Documentation
 
-Misskey Documentation can be found at [Misskey Hub](https://misskey-hub.net/), some of the links and graphics above also lead to specific portions of it.
+Yanki Documentation can be found at [Yanki Hub](https://misskey-hub.net/), some of the links and graphics above also lead to specific portions of it.
 
 ## Sponsors
 
@@ -71,8 +71,8 @@ Thanks to [Codecov](https://about.codecov.io/for/open-source/) for providing the
 
 <a href="https://crowdin.com/"><img src="https://user-images.githubusercontent.com/20679825/230709597-1299a011-171a-4294-a91e-355a9b37c672.svg" height="30" alt="Crowdin" /></a>
 
-Thanks to [Crowdin](https://crowdin.com/) for providing the localization platform that helps us translate Misskey into many languages.
+Thanks to [Crowdin](https://crowdin.com/) for providing the localization platform that helps us translate Yanki into many languages.
 
 <a href="https://hub.docker.com/"><img src="https://user-images.githubusercontent.com/20679825/230148221-f8e73a32-a49b-47c3-9029-9a15c3824f92.png" height="30" alt="Docker" /></a>
 
-Thanks to [Docker](https://hub.docker.com/) for providing the container platform that helps us run Misskey in production.
+Thanks to [Docker](https://hub.docker.com/) for providing the container platform that helps us run Yanki in production.
