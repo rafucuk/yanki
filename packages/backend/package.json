@@ -173,7 +173,7 @@
 		"@types/bcryptjs": "2.4.2",
 		"@types/cbor": "6.0.0",
 		"@types/color-convert": "2.0.0",
-		"@types/content-disposition": "0.5.5",
+		"@types/content-disposition": "0.5.8",
 		"@types/escape-regexp": "0.0.1",
 		"@types/fluent-ffmpeg": "2.1.21",
 		"@types/jest": "29.5.3",
