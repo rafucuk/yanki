@@ -49,7 +49,7 @@ export class Note {
 
 	@Index()
 	@Column('varchar', {
-		length: 256, nullable: true,
+		nullable: true,
 	})
 	public threadId: string | null;
 

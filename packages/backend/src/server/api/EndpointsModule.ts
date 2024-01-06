@@ -267,6 +267,7 @@ import * as ep___notes_reactions_delete from './endpoints/notes/reactions/delete
 import * as ep___notes_renotes from './endpoints/notes/renotes.js';
 import * as ep___notes_replies from './endpoints/notes/replies.js';
 import * as ep___notes_searchByTag from './endpoints/notes/search-by-tag.js';
+import * as ep___notes_thread from './endpoints/notes/thread.js';
 import * as ep___notes_search from './endpoints/notes/search.js';
 import * as ep___notes_show from './endpoints/notes/show.js';
 import * as ep___notes_state from './endpoints/notes/state.js';
@@ -612,6 +613,7 @@ const $notes_reactions_delete: Provider = { provide: 'ep:notes/reactions/delete'
 const $notes_renotes: Provider = { provide: 'ep:notes/renotes', useClass: ep___notes_renotes.default };
 const $notes_replies: Provider = { provide: 'ep:notes/replies', useClass: ep___notes_replies.default };
 const $notes_searchByTag: Provider = { provide: 'ep:notes/search-by-tag', useClass: ep___notes_searchByTag.default };
+const $notes_thread: Provider = { provide: 'ep:notes/thread', useClass: ep___notes_thread.default };
 const $notes_search: Provider = { provide: 'ep:notes/search', useClass: ep___notes_search.default };
 const $notes_show: Provider = { provide: 'ep:notes/show', useClass: ep___notes_show.default };
 const $notes_state: Provider = { provide: 'ep:notes/state', useClass: ep___notes_state.default };
@@ -961,6 +963,7 @@ const $retention: Provider = { provide: 'ep:retention', useClass: ep___retention
 		$notes_renotes,
 		$notes_replies,
 		$notes_searchByTag,
+		$notes_thread,
 		$notes_search,
 		$notes_show,
 		$notes_state,
@@ -1303,6 +1306,7 @@ const $retention: Provider = { provide: 'ep:retention', useClass: ep___retention
 		$notes_reactions_delete,
 		$notes_renotes,
 		$notes_replies,
+		$notes_thread,
 		$notes_searchByTag,
 		$notes_search,
 		$notes_show,
