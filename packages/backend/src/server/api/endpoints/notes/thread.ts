@@ -80,7 +80,7 @@ export default class extends Endpoint<typeof meta, typeof paramDef> {
 
 			try {
 				if (ps.threadId) {
-					query.andWhere(`'note.threadId' = :threadId`, {threadId: ps.threadId});
+                    query.andWhere(`('note.id' = :threadId OR note.threadId = :threadId)`, { threadId: ps.threadId });
 				}
 			} catch (e) {
 				if (e === 'Injection') return [];
