@@ -5,9 +5,7 @@ const keys = [
 	'_dark',
 	'_light',
 	'l-light',
-	'l-yanki',
 	'd-dark',
-	'd-yanki',
 ]
 
 await Promise.all(keys.map((key) => readFile(new URL(`../src/themes/${key}.json5`, import.meta.url), 'utf8'))).then((sources) => {
