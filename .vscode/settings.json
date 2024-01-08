@@ -14,19 +14,9 @@
             "server": "localhost",
             "port": 5432,
             "driver": "PostgreSQL",
-            "name": "postgres",
-            "database": "miss",
-            "username": "miss",
-            "password": "miss"
-        },
-        {
-            "previewLimit": 50,
-            "server": "localhost",
-            "port": 5432,
-            "driver": "PostgreSQL",
-            "name": "yanki",
-            "database": "yanki",
-            "username": "yanki",
+            "name": "yanki5",
+            "database": "yanki5",
+            "username": "yanki5",
             "password": "raufsen33"
         }
     ]

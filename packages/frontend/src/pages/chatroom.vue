@@ -1,145 +1,64 @@
 <template>
     <MkStickyContainer>
-        <template #header><MkPageHeader :actions="headerActions" :tabs="headerTabs"/></template>
         <MkSpacer :contentMax="800">
-            <div>
-                <Transition :name="defaultStore.state.animation ? 'fade' : ''" mode="out-in">
-                    <div v-if="note">    
-                        <div class="_margin">
-                            <div class="_margin _gaps_s">
-                                <MkRemoteCaution v-if="note.user.host != null" :href="note.url ?? note.uri"/>
-                                <MkNoteDetailed :key="note.id" v-model:note="note" :class="$style.note"/>
-                            </div>
-                            <div v-if="clips && clips.length > 0" class="_margin">
-                                <div style="font-weight: bold; padding: 12px;">{{ i18n.ts.clip }}</div>
-                                <div class="_gaps">
-                                    <MkA v-for="item in clips" :key="item.id" :to="`/clips/${item.id}`">
-                                        <MkClipPreview :clip="item"/>
-                                    </MkA>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <MkError v-else-if="error" @retry="fetchNote()"/>
-                    <MkLoading v-else/>
-                </Transition>
-            </div>
+            <MkNotes ref="tlComponent" :noGap="!defaultStore.state.showGapBetweenNotesInTimeline" :pagination="directNotesPagination" @queue="emit('queue', $event)"/>
         </MkSpacer>
     </MkStickyContainer>
     </template>
     
     <script lang="ts" setup>
-    import { computed, watch } from 'vue';
-    import * as misskey from 'misskey-js';
-    import MkNoteDetailed from '@/components/MkMessage.vue';
-    import MkRemoteCaution from '@/components/MkRemoteCaution.vue';
-    import MkButton from '@/components/MkButton.vue';
-    import * as os from '@/os';
-    import { definePageMetadata } from '@/scripts/page-metadata';
+    import { computed } from 'vue';
+    import MkNotes from '@/components/MkNotes.vue';
     import { i18n } from '@/i18n';
-    import { dateString } from '@/filters/date';
-    import MkClipPreview from '@/components/MkClipPreview.vue';
+    import { definePageMetadata } from '@/scripts/page-metadata';
+    import { useStream } from '@/stream';
+    import * as sound from '@/scripts/sound';
+    import { $i } from '@/account';
     import { defaultStore } from '@/store';
-    
+
+    let connection;
+
+    const stream = useStream();
+
+
+    const emit = defineEmits<{
+        (ev: 'note'): void;
+        (ev: 'queue', count: number): void;
+    }>();
+
     const props = defineProps<{
         noteId: string;
+        sound?: boolean;
     }>();
-    
-    let note = $ref<null | misskey.entities.Note>();
-    let clips = $ref();
-    let hasNext = $ref(false);
-    let showNext = $ref(false);
-    let error = $ref();
 
+    const tlComponent: InstanceType<typeof MkNotes> = $ref();
     
-    const nextPagination = {
+    const prepend = note => {
+        console.log('testt')
+        tlComponent.pagingComponent?.prepend(note);
+
+        emit('note');
+
+        if (props.sound) {
+            sound.play($i && (note.userId === $i.id) ? 'noteMy' : 'note');
+        }
+    };
+
+	connection = stream.useChannel('globalTimeline');
+	connection.on('note', prepend);
+        
+    const directNotesPagination = {
         reversed: true,
-        endpoint: 'users/notes' as const,
+        endpoint: 'notes/thread' as const,
         limit: 10,
-        params: computed(() => note ? ({
-            userId: note.userId,
-            sinceId: note.id,
-        }) : null),
+        params: {
+            threadId: props.noteId,
+        },
     };
     
-    function fetchNote() {
-        hasNext = false;
-        showNext = false;
-        note = null;
-        os.api('notes/show', {
-            noteId: props.noteId,
-        }).then(res => {
-            note = res;
-            Promise.all([
-                os.api('notes/clips', {
-                    noteId: note.id,
-                }),
-                os.api('users/notes', {
-                    userId: note.userId,
-                    untilId: note.id,
-                    limit: 1,
-                }),
-                os.api('users/notes', {
-                    userId: note.userId,
-                    sinceId: note.id,
-                    limit: 1,
-                }),
-            ]).then(([_clips, prev, next]) => {
-                clips = _clips;
-                hasNext = next.length !== 0;
-            });
-        }).catch(err => {
-            error = err;
-        });
-    }
-    
-    watch(() => props.noteId, fetchNote, {
-        immediate: true,
-    });
-    
-    const headerActions = $computed(() => []);
-    
-    const headerTabs = $computed(() => []);
-    
-    definePageMetadata(computed(() => note ? {
-        title: i18n.ts.note,
-        subtitle: dateString(note.createdAt),
-        avatar: note.user,
-        path: `/notes/${note.id}`,
-        share: {
-            title: i18n.t('noteOf', { user: note.user.name }),
-            text: note.text,
-        },
-    } : null));
+    definePageMetadata(computed(() => ({
+        title: i18n.ts.notifications,
+        icon: 'ti ti-bell',
+    })));
     </script>
     
-    <style lang="scss" module>
-    .fade-enter-active,
-    .fade-leave-active {
-        transition: opacity 0.125s ease;
-    }
-    .fade-enter-from,
-    .fade-leave-to {
-        opacity: 0;
-    }
-    
-    .loadNext,
-    .loadPrev {
-        min-width: 0;
-        margin: 0 auto;
-        border-radius: 999px;
-    }
-    
-    .loadNext {
-        margin-bottom: var(--margin);
-    }
-    
-    .loadPrev {
-        margin-top: var(--margin);
-    }
-    
-    .note {
-        border-radius: var(--radius);
-        background: var(--panel);
-    }
-    </style>
