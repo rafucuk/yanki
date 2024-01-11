@@ -23,6 +23,7 @@ import { GalleryPost } from '@/models/entities/GalleryPost.js';
 import { Hashtag } from '@/models/entities/Hashtag.js';
 import { Instance } from '@/models/entities/Instance.js';
 import { Meta } from '@/models/entities/Meta.js';
+import { Point } from '@/models/entities/Point.js';
 import { ModerationLog } from '@/models/entities/ModerationLog.js';
 import { MutedNote } from '@/models/entities/MutedNote.js';
 import { Muting } from '@/models/entities/Muting.js';
@@ -106,6 +107,7 @@ export {
 	PasswordResetRequest,
 	Poll,
 	PollVote,
+	Point,
 	PromoNote,
 	PromoRead,
 	RegistrationTicket,
@@ -197,6 +199,7 @@ export type WebhooksRepository = Repository<Webhook>;
 export type ChannelsRepository = Repository<Channel>;
 export type RetentionAggregationsRepository = Repository<RetentionAggregation>;
 export type RolesRepository = Repository<Role>;
+export type PointRepository = Repository<Point>;
 export type RoleAssignmentsRepository = Repository<RoleAssignment>;
 export type FlashsRepository = Repository<Flash>;
 export type FlashLikesRepository = Repository<FlashLike>;
