@@ -21,9 +21,7 @@ export const themeProps = Object.keys(lightTheme.props).filter(key => !key.start
 export const getBuiltinThemes = () => Promise.all(
 	[
 		'l-light',
-		'l-yanki',
 		'd-dark',
-		'd-yanki',
 	].map(name => import(`../themes/${name}.json5`).then(({ default: _default }): Theme => _default)),
 );
 
