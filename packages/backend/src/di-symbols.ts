@@ -69,6 +69,7 @@ export const DI = {
 	passwordResetRequestsRepository: Symbol('passwordResetRequestsRepository'),
 	retentionAggregationsRepository: Symbol('retentionAggregationsRepository'),
 	rolesRepository: Symbol('rolesRepository'),
+	pointRepository: Symbol('pointRepository'),
 	roleAssignmentsRepository: Symbol('roleAssignmentsRepository'),
 	flashsRepository: Symbol('flashsRepository'),
 	flashLikesRepository: Symbol('flashLikesRepository'),
