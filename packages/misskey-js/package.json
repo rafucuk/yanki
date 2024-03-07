@@ -32,7 +32,7 @@
 		"jest-websocket-mock": "2.4.0",
 		"mock-socket": "9.2.1",
 		"tsd": "0.28.1",
-		"typescript": "5.1.6"
+		"typescript": "5.4.2"
 	},
 	"files": [
 		"built"
