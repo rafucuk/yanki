@@ -65,7 +65,7 @@
 		"@fastify/cookie": "8.3.0",
 		"@fastify/cors": "8.3.0",
 		"@fastify/http-proxy": "9.2.1",
-		"@fastify/multipart": "7.7.0",
+		"@fastify/multipart": "8.2.0",
 		"@fastify/static": "6.10.2",
 		"@fastify/view": "8.0.0",
 		"@misskey-dev/sharp-read-bmp": "^1.1.1",
